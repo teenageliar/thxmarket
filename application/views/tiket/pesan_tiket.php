@@ -44,11 +44,11 @@
     <div class="container-fluid">
     <div class="row">
     <div class="col-lg-12 hugeP" style="margin-top:80px;">
-          <?php echo $show->nama ?>
+          
         </div>
       <div class="col-lg-6" style="margin-top:30px; ">
           <div class="col-lg-12">
-              <img src="<?=base_url() ?>/upload/show/<?php echo $show->foto ?>" class="img-responsive" />
+              <!-- <img src="<?=base_url() ?>/upload/show/<?php echo $show->foto ?>" class="img-responsive" /> -->
                 <!--start-->
     <!-- <div style="display:none;">
         <div id="ninja-slider">
@@ -91,39 +91,38 @@
                       Informasi Tiket
                     </td>
                 </tr>
-                <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
+                
                 <tr>
                   <td >Jenis Tiket</td>
                     <td> : </td>
-                    <td><?php echo $row->jenis; ?></td>
+                    <td>Presale</td>
                 </tr>
                 <tr>
                   <td>Harga tiket</td>
                     <td> : </td>
                     <td>
-                      Rp. <?php echo $row->harga; ?>
+                      Rp.15.000 
                     </td>
                 </tr>
                 <tr>
                   <td>Venue</td>
                     <td> : </td>
-                    <td><?php echo $show->lokasi ?></td>
+                    <td>Parkir Lotte Ciputat</td>
                 </tr>
                 <tr>
                   <td>Date</td>
                     <td> : </td>
-                    <td><?php echo $show->tanggal ?></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
-      <?php endforeach; ?>
+      
         <div class="col-lg-12">
           <div id="myTabs" style="background:#FFF; padding:10px;">
               
             <p class="hugeP">Detail Order <?php echo validation_errors(); ?></p>
   <form method="post" action="<?php echo base_url('index.php/tiket/add_all') ?>">
-  <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
-  <div id="<?= 't'.$no;?>">
+    
     <table class="table table-responsive table-hover table-striped" style="border:#d35400 solid 2px;">
               <tr>
                   <td colspan="3" style="background:#FFF; color:black; text-align:center; font-family:raleway, 'Roboto', arial;">
@@ -133,35 +132,17 @@
                 <tr>
                   <td>Jenis Tiket</td>
                     <td> : </td>
-                    <td><?php echo $row->jenis; ?><input name="id_tiket" type="hidden" value="<?php echo $row->id_jenis; ?>"></td>
+                    <td>Presale</td>
                 </tr>
                 <tr>
                   <td>Harga</td>
                     <td> : </td>
-                    <td>Rp.<?php echo $row->harga; ?> ;- <input id="harga" type="hidden" value="<?php echo $row->harga; ?>">
+                    <td>Rp.15.000 ;- <input id="harga" type="hidden" value="15000">
                     
                     </td>
-                </tr>
-                <tr>
-                  <td>Jumlah tiket</td>
-                    <td> : </td>
-                          <td>
-                            <select name="jumlah_pesanan" id="kuantiti" onchange="myFunction()" required>
-                                    <option value="" selected>Pilih</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                            </select>
-                          </td>
-                </tr>
-                <tr>
-                  <td>Total Harga</td>
-                    <td> : </td>
-                    <td><p id="total"></p><input name="total_bayar" id="total_bayar" type="number"hidden><?=form_error('total_bayar') ?></td>
-                    
-                </tr>
-              
+                </tr>              
             </table>
-<?php endforeach; ?>
+
             <table class="table table-responsive table-hover table-striped" style="border:#d35400 solid 2px;">
                           <tr>
                               <td colspan="3" style="background:#FFF; color:black; text-align:center; font-family:raleway, 'Roboto', arial;">
@@ -172,12 +153,6 @@
                               <td>Nama Lengkap</td>
                                 <td> : </td>
                                 <td><input type="text" class="form-control" name="nama" id="nama" required></td>
-                            </tr>
-                            <tr>
-                              <td>No Identitas</td>
-                                <td> : </td>
-                                <?php echo form_error('no_identitas'); ?>
-                                <td><input type="number" class="form-control" name="no_identitas" id="no_identitas" required></td>
                             </tr>
                              <tr>
                               <td>No HP</td>

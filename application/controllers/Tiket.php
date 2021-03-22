@@ -71,6 +71,44 @@ function __construct(){
         redirect('Show');
     }
 
+    public function beli(){
+         $this->load->library('form_validation');
+        global $kode;
+        $kodebayar = $kode;
+        
+        $post = $this->input->post();
+        //$data["pemesanan"] = $this->M_pesan->getPesan();
+        $data["datu"] = $post["total_bayar"];
+        $data["dati"] = $post["jumlah_pesanan"];
+        $data["kodebayar"] = $kode;
+        
+        $this->form_validation->set_rules('nama','nama','required');
+        $this->form_validation->set_rules('email','email','required|is_unique[pengunjung.email]');
+        $this->form_validation->set_rules('no_hp','no_hp','required');
+        
+        
+
+        $this->form_validation->set_message('required','{field} masih kosong, silahkan isi');
+        $this->form_validation->set_message('min_length','{field} minimal 3 karakter');
+        $this->form_validation->set_message('is_unique','{field} ini sudah terpakai, silahkan coba yang lain');
+        
+        if($this->form_validation->run() == FALSE){
+            
+            echo"<script>alert('Pastikan data yang anda masukkan benar!! </br> Pastikan juga data diri yang anda inputkan belum pernah digunakan sebelumnya');</script>";
+            echo "<script>window.history.back();</script>";
+
+            
+        }else{
+            $this->add_pengunjung();
+            if($this->db->affected_rows() > 0)
+            {
+                echo"<script>alert('Terima kasih, silakan tunggu untuk mendapatkan e-mail konfirmasi pembayaran!');</script>";
+            }
+                echo "<script>window.location='".base_url('index.php/show')."';</script>";
+        }
+
+        
+    }    
 
     public function add_all(){
         $this->load->library('form_validation');
@@ -172,7 +210,6 @@ function __construct(){
         global $kode;
         $post = $this->input->post();
         $nama = $post["nama"];
-        $no_identitas = $post["no_identitas"];
         $no_hp = $post["no_hp"];
         $email = $post["email"];
         

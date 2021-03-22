@@ -48,9 +48,9 @@ function __construct(){
         $this->load->view('gal');//load view dengan memanggil data array multidimensi
         }  
     public function beli(){
-        $data['data'] = $this->M_show->getAll(0,100); 
+       /* $data['data'] = $this->M_show->getAll(0,100);*/ 
        $this->load->view('header/header');//load view dengan memanggil data array multidimensi
-       $this->load->view('beli',$data);//load view dengan memanggil data array multidimensi
+       $this->load->view('tiket/pesan_tiket');//load view dengan memanggil data array multidimensi
         /*echo"<script>alert('Mohon maaf, penjualan tiket ditutup sementara');</script>";
         	echo "<script>window.location='".base_url('index.php/show')."';</script>"; */  
         }
