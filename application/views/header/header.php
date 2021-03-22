@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -46,4 +46,33 @@
         	   <img src="<?php echo base_url()?>asset/image/kontent/logo-musik.png" class="img img-responsive float-right">
             </div>
         </div>
-    </div>
+    </div> -->
+      <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<?php echo base_url()?>asset/style.css">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand font-weight-bold" href="#">THX MARKET</a>
+        <div class="nav-item dropdown bg-dark rounded" style="background-color: black !important;">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tiket
+          </a>
+          <div class="dropdown-menu bg-dark aria-labelledby="navbarDropdown" style="background-color: black !important;">
+            <a class="dropdown-item" href="<?=base_url()?>/tiket/pilih_tiket/46/63">Beli</a>
+            <a class="dropdown-item" href="#">Bayar</a>
+          </div>
+        </div>
+      </div>
+    </nav>

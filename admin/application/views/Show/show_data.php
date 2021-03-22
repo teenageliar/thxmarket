@@ -14,7 +14,7 @@
 		<div class="box-header">
 			<h3 class="box-title">Data Show</h3>
 			<div class="pull-right">
-				<a href="<?=base_url('../index.php/show/tambah')?>" class="btn btn-primary btn-flat">
+				<a href="<?=base_url('show/tambah')?>" class="btn btn-primary btn-flat">
 					<i class="fa fa-user-plus"></i>Tabmbah Show
 				</a>
 			</div>

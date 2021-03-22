@@ -21,7 +21,7 @@ class Show extends CI_Controller {
     {   
         $data = array(
 				'page' => 'add',
-				'row' => $show
+				// 'row' => $show
  			);
         $this->template->load('template','Show/form_show', $data);
     }

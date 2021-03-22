@@ -21,11 +21,11 @@ function __construct(){
             $this->M_show->save();//memanggil fungsi untuk insert database show di M_model
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
-        redirect('../admin-2/show');//jika semua script diatas yang ada di fungsi ini maka diarahkan ke controller show dengan funhgsi show_;ist
+        redirect('../admin/show');//jika semua script diatas yang ada di fungsi ini maka diarahkan ke controller show dengan funhgsi show_;ist
     }
     public function index(){
         $this->load->view('header/header');//load view dengan memanggil data array multidimensi
-        $this->load->view('home');//load view dengan memanggil data array multidimensi
+        $this->load->view('index');//load view dengan memanggil data array multidimensi
         } 
     public function hub(){
         $this->load->view('header/header');//load view dengan memanggil data array multidimensi
