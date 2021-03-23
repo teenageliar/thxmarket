@@ -26,7 +26,7 @@
 	<div class="container" style="overflow: hidden;">
 		<div class="main text-white text-center">
 	<?php $no = 0;foreach ($pesanan->result() as $row) :?>
-	<form style="padding: 20px 0px;" method="post" action="https://musikologifest.com/index.php/tiket/kirim_bukti/" enctype="multipart/form-data">
+	<form style="padding: 20px 0px;" method="post" action="<?=base_url(); ?>tiket/kirim_bukti/" enctype="multipart/form-data">	
 		<h3 class="font-weight-bold">Bukti Pembayaran</h3>
 		<table class="text-white">
 		<tr>
