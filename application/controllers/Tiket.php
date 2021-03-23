@@ -46,9 +46,9 @@ function __construct(){
         $now = date("d-m-Y H:i");
         $tglex = date('d-m-Y H:i', strtotime('+1 days', strtotime($tanggalp))); //db store
 
-        echo "tanggal pemesanan : ".$tanggalp."<br>";
-        echo "Tanggal expired :".$tglex."<br>"; 
-        echo "tanggal sekarang : ".$now."<br>";//print tanggal
+        // echo "Tanggal Pemesanan : ".$tanggalp."<br>";
+        // echo "Tanggal Expired :".$tglex."<br>"; 
+        // echo "Tanggal Sekarang : ".$now."<br>";//print tanggal
 
         //halaman pembayaran
         $tanggalsek = strtotime($now);
@@ -59,7 +59,7 @@ function __construct(){
         echo"<script>alert('Pemesanan sudah tidak berlaku, karna sudah melampaui waktu bayar!');</script>";
         	/*echo "<script>window.location='".base_url('show')."';</script>";   */     
         }else {
-        $this->load->view('pemesanan/bukti',$data);
+        $this->load->view('pemesanan/bukti',$data,$tanggalp,$tglex,$now);
         }
     }
 
