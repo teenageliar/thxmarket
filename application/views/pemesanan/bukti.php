@@ -4,7 +4,7 @@
 </head>
 <body>
 	<?php $no = 0;foreach ($pesanan->result() as $row) :?>
-	<form method="post" action="<?=base_url(); ?>tiket/kirim_bukti/" enctype="multipart/form-data">
+	<form method="post" action="https://musikologifest.com/index.php/tiket/kirim_bukti/" enctype="multipart/form-data">
 		<table>
 		<tr>
 			<td>Kode Unik</td>
