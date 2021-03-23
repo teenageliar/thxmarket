@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +23,7 @@
 
 </head>
 <body style="font-family:raleway, 'Roboto', arial;">
-<!--<div id="header">
+<div id="header">
       <span style="position:absolute; cursor:pointer;" onclick="openNav()">☰</span>
       <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -40,7 +40,7 @@
           <a href=""><img src="<?=base_url() ?>/asset/image/i.png" class="img-responsive" style="max-width:200px; margin-top:20px;"/></a>
         </div>
         
-    </div>-->
+    </div>
     <div class="container-fluid">
     <div class="row">
     <div class="col-lg-12 hugeP" style="margin-top:80px;">
@@ -49,8 +49,8 @@
       <div class="col-lg-6" style="margin-top:30px; ">
           <div class="col-lg-12">
               <img src="<?=base_url() ?>/upload/show/<?php echo $show->foto ?>" class="img-responsive" />
-                <!--start-->
-    <!-- <div style="display:none;">
+                start
+    <div style="display:none;">
         <div id="ninja-slider">
             <div class="slider-inner">
                 <ul>
@@ -78,7 +78,7 @@
             <img src="<?=base_url() ?>/asset/image/kontent/5031790.jpeg" onclick="lightbox(1)" style="width:auto; height:140px;" class="abaout3" /><br />
         </div>
     </div> -->
-    <!--end-->
+    <!--end
             </div>
         </div>
         <div class="col-lg-6" style="margin-top:30px; border-left:#CCC 1px solid;">
@@ -200,7 +200,7 @@
         </div>
      </div>
     </div>
-       <!--<div id="footer" class="footer">
+       <div id="footer" class="footer">
            <div class="col-sm-6" style="margin-top:10px;">
                 &copy; Copy Right Easy Tickets,2016 All rights reserved.
                 <br />
@@ -212,7 +212,7 @@
            <div class="col-lg-4">
               
            </div>
-       </div>-->
+       </div>
 </body>
 </html>
 
@@ -224,4 +224,92 @@
     document.getElementById("total_bayar").value = y * x;
 
   }
-</script>
+</script> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<?=base_url() ?>/asset/style.css">
+    
+    <style>
+        body{
+            background-image: url(<?=base_url() ?>/asset/image/img4.jpg);
+            background-position: center;
+            font-family: sans-serif;
+            margin-top: 40px;
+        }
+    </style>
+    
+    <div class="container" style="overflow-y: hidden;">
+        <div class="text-white main">
+        <form style="padding: 20px 30px;">
+            <h3 class="text-center">Informasi Tiket</h3>
+            <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Jenis Tiket</label>
+                    <p style="padding-top: 10px; margin-left: 15px;">: <?php echo $row->jenis; ?></p>
+                </div>
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Harga</label>
+                    <p style="padding-top: 10px; margin-left: 15px;">: Rp. <?php echo $row->harga; ?>,-</p>
+                </div>
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Venue</label>
+                    <p style="padding-top: 10px; margin-left: 15px;">: <?php echo $show->lokasi; ?></p>
+                </div>
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Tanggal Acara</label>
+                    <p style="padding-top: 10px; margin-left: 15px;">: <?php echo $show->tanggal; ?></p>
+                </div>
+            <?php endforeach; ?>
+
+            <br>
+
+            <h3 class="text-center">Data Diri</h3>
+            <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Nama</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nomor Telepon</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="btn btn-primary">Beli</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

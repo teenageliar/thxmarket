@@ -24,6 +24,25 @@
         <div class="text-white main">
         <form style="padding: 20px 30px;">
             <h1 class="text-center">Beli Tiket</h1>
+            <h3 class="text-center">Informasi Tiket</h3>
+            <div class="form-group row">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Informasi Tiket</label>
+                    <p style="padding-top: 10px; margin-left: 15px;"><?php echo $row->jenis; ?></p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Harga</label>
+                    <p style="padding-top: 10px; margin-left: 15px;">Rp. <?php echo $row->harga,- ?></p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Venue</label>
+                    <p style="padding-top: 10px; margin-left: 15px;"><?php echo $show->lokasi ?></p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Tanggal Acara</label>
+                    <p style="padding-top: 10px; margin-left: 15px;"><?php echo $show->tanggal ?></p>
+                </div>
+            </div>
             <div class="form-group row">
             <label class="col-sm-3 col-form-label">Nama</label>
                 <div class="col-sm-9">
