@@ -69,6 +69,18 @@ class M_pesan extends CI_Model
         $query = $this->db->get_where($this->_table, ["kode_unik" => $kode_unik]);
         $query = $this->db->query("SELECT pemesanan.id_pemesanan,pemesanan.kode_unik,pemesanan.jumlah_pesanan,pemesanan.totalbayar,pemesanan.tanggal_pesan,pemesanan.tanggal_exp,pemesanan.status_pemesanan,pengunjung.nama FROM pemesanan INNER JOIN pengunjung ON pemesanan.id_pengunjung = pengunjung.id_pengunjung where kode_unik = '$kode_unik'");
         return $query;
+    }
+    public function get($id)
+    {
+        $this->db->from('pemesanan');
+        $this->db->join('jenis_tiket', 'jenis_tiket.id_jenis = pemesanan.id_tiket');
+        $this->db->join('roadshow', 'jenis_tiket.id_show = roadshow.id_show');
+        $this->db->join('pengunjung', 'pengunjung.id_pengunjung = pemesanan.id_pengunjung');
+        if($id !=null){
+            $this->db->where('id_pemesanan', $id);
+        }
+        $query = $this->db->get();
+        return $query;
     }  
   /*   public function getTanggal()
     {

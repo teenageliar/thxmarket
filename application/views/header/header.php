@@ -70,7 +70,7 @@
             Tiket
           </a>
           <div class="dropdown-menu bg-dark aria-labelledby="navbarDropdown" style="background-color: black !important;">
-            <a class="dropdown-item" href="<?=base_url()?>/tiket/pilih_tiket/46/63">Beli</a>
+            <a class="dropdown-item" href="<?=base_url()?>tiket/pilih_tiket/46/63">Beli</a>
             <a class="dropdown-item" href="#">Bayar</a>
           </div>
         </div>

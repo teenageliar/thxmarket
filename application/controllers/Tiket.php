@@ -32,18 +32,19 @@ function __construct(){
         $this->load->view('tiket/pesan_tiket', $data);
         //load view dengan memanggil data array multidimensi
     }
-    public function upload_bukti($kode_unik){
-        $data["pesanan"] = $this->M_pesan->cari_pesanan($kode_unik);
-        /*$tanggalp = $this->M_pesan->getTanggal();*/
-        $pow = $this->M_pesan->cari_pesanan($kode_unik);
+    public function upload_bukti($id){
+        $data["pesanan"] = $this->M_pesan->get($id);
+        // $tanggalp = $this->M_pesan->getTanggal();
+        $pow = $this->M_pesan->get($id);
          foreach($pow->result_array() as $row){
-             $tanggalp = $row['tanggal_pesan'];
+             $tanggalp = date('Y-m-d H:i:s', strtotime($row['tanggal_pesan']));
+             
          }
 
         /*$tp = date("2020-02-19 h:i");// database store*/
 
-        $now = date("y-m-d H:i");
-        $tglex = date('Y-m-d H:i', strtotime('+1 days', strtotime($tanggalp))); //db store
+        $now = date("d-m-Y H:i");
+        $tglex = date('d-m-Y H:i', strtotime('+1 days', strtotime($tanggalp))); //db store
 
         echo "tanggal pemesanan : ".$tanggalp."<br>";
         echo "Tanggal expired :".$tglex."<br>"; 
@@ -56,7 +57,7 @@ function __construct(){
         $this->session->set_flashdata('success', '<?php echo "tanggal pemesanan : ".$tanggalp."<br>"; ?>');
         
         echo"<script>alert('Pemesanan sudah tidak berlaku, karna sudah melampaui waktu bayar!');</script>";
-        	echo "<script>window.location='".base_url('index.php/show')."';</script>";        
+        	/*echo "<script>window.location='".base_url('show')."';</script>";   */     
         }else {
         $this->load->view('pemesanan/bukti',$data);
         }
@@ -129,7 +130,7 @@ function __construct(){
         <body>
         <p>
         <h3>Pembayaran Tiket Tour Musikologi</h3><br><br>
-        <img src='".$url."logo-musik.png' width='300' height='90'>
+       /* <img src='".$url."logo-musik.png' width='300' height='90'>*/
         <h3>Total Pembayaran: Rp.".$totalbayar."</h3>
         <b>Hai,".$nama."</b><br>
        <ol start='1'>

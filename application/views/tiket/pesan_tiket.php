@@ -121,7 +121,7 @@
           <div id="myTabs" style="background:#FFF; padding:10px;">
               
             <p class="hugeP">Detail Order <?php echo validation_errors(); ?></p>
-  <form method="post" action="<?php echo base_url('index.php/tiket/add_all') ?>">
+  <form method="post" action="<?php echo base_url('tiket/add_all') ?>">
   <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
   <div id="<?= 't'.$no;?>">
     <table class="table table-responsive table-hover table-striped" style="border:#d35400 solid 2px;">
