@@ -80,12 +80,11 @@ function __construct(){
         
         $post = $this->input->post();
         //$data["pemesanan"] = $this->M_pesan->getPesan();
-        $data["datu"] = $post["total_bayar"];
-        $data["dati"] = $post["jumlah_pesanan"];
+        
+        
         $data["kodebayar"] = $kode;
         
         $this->form_validation->set_rules('nama','nama','required');
-		$this->form_validation->set_rules('no_identitas','no_identitas','required|min_length[3]|is_unique[pengunjung.no_identitas]');
 		$this->form_validation->set_rules('email','email','required|is_unique[pengunjung.email]');
 		$this->form_validation->set_rules('no_hp','no_hp','required');
 		
@@ -173,7 +172,6 @@ function __construct(){
         global $kode;
         $post = $this->input->post();
         $nama = $post["nama"];
-        $no_identitas = $post["no_identitas"];
         $no_hp = $post["no_hp"];
         $email = $post["email"];
         
@@ -182,10 +180,10 @@ function __construct(){
        $this->M_pengunjung->save_pengunjung();//memanggil fungsi untuk insert database show di M_model
 
         $id_tiket = $post["id_tiket"];
-        $jumlah_pesanan = $post["jumlah_pesanan"];
-        $totalbayar = $post["total_bayar"];
+        $jumlah_pesanan = "1";
+        $totalbayar = "15000";
         $status_pemesanan = "1";
-        $data["idn"] = $this->M_pengunjung->getBynik($no_identitas);
+        $data["idn"] = $this->M_pengunjung->getBynik($no_hp);
         
         $idpengunjung = $data["idn"]->id_pengunjung;
         
@@ -203,9 +201,7 @@ function __construct(){
        
         
     }
-    public function call_noidn($no_identitas){
-      
-    }
+    
         public function add_tiket()
     {
         $post = $this->input->post();

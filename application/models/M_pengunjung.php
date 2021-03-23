@@ -5,7 +5,6 @@ class M_pengunjung extends CI_Model
     private $_table = "pengunjung";
 
     public $nama;
-    public $no_identitas;
     public $no_hp;
     public $email;
 
@@ -49,9 +48,9 @@ class M_pengunjung extends CI_Model
     {
         return $this->db->get_where($this->_table, ["id_jenis" => $id])->row();
     }
-      public function getBynik($no_identitas)
+      public function getBynik($no_hp)
     {
-        return $this->db->get_where($this->_table, ["no_identitas" => $no_identitas])->row();
+        return $this->db->get_where($this->_table, ["no_hp" => $no_hp])->row();
     }
     
     
@@ -79,7 +78,6 @@ class M_pengunjung extends CI_Model
     {
         $post = $this->input->post();
         $this->nama =  $post["nama"];
-        $this->no_identitas = $post["no_identitas"];
         $this->no_hp = $post["no_hp"];
         $this->email = $post["email"];
         

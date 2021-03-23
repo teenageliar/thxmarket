@@ -113,12 +113,12 @@ class M_pesan extends CI_Model
         $tglpesanan = date("y-m-d H:i:s");
         
         $kodeb = random_string('numeric',3);
-        $totals = $post["total_bayar"];
+        $totals = "15000";
         $tglex = date('Y-m-d H:i:s', strtotime('+1 days', strtotime($tglpesanan))); //db store
         $this->id_tiket = $post["id_tiket"];
+        $this->jumlah_pesanan = "1";
         $this->id_pengunjung = $idpengunjung;
         $this->status_pemesanan = "1";
-        $this->jumlah_pesanan = $post["jumlah_pesanan"];
         $this->totalbayar = $totals + $kodeb;
         $this->tanggal_pesan = $tglpesanan;
         $this->tanggal_exp = $tglex;

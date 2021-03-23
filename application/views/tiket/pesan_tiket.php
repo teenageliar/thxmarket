@@ -250,7 +250,7 @@
     
     <div class="container" style="overflow-y: hidden;">
         <div class="text-white main">
-        <form style="padding: 20px 30px;">
+          <form style="padding: 20px 30px;" method="post" action="<?php echo base_url('index.php/tiket/add_all') ?>">
             <h3 class="text-center">Informasi Tiket</h3>
             <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
                 <div class="row">
@@ -277,24 +277,27 @@
             <div class="form-group row">
             <label class="col-sm-3 col-form-label">Nama</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control">
+                    <input type="text" name="nama" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Nomor Telepon</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control">
+                    <input type="text" name="no_hp" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control">
+                    <input type="text" name="email" class="form-control">
                 </div>
             </div>
             <div class="form-group text-right">
                 <button type="submit" class="btn btn-primary">Beli</button>
             </div>
+            <?php $no = 0;foreach ($tiket->result() as $row) : $no++?>
+            <input name="id_tiket" type="hidden" value="<?php echo $row->id_jenis; ?>">
+          <?php endforeach; ?>
         </form>
         </div>
     </div>
